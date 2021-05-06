@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ShowAllFiles>false</ShowAllFiles>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="FlashCardMenu.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MainMenu.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="QuizPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SettingsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Study.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="TopicMenu.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="TwoAnswers.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="TwoQuestions.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="FlashCardMenu.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainMenu.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="QuizPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SettingsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Study.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="TopicMenu.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="TwoAnswers.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="TwoQuestions.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

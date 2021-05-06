@@ -1,0 +1,192 @@
+﻿<Page x:Name="quizPage" x:Class="E_Maths_Learning.QuizPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:E_Maths_Learning"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1280"
+      Title="QuizPage" Background="White">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.75*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="0.75*"/>
+            <RowDefinition Height="1.75*"/>
+            <RowDefinition Height="0.75*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1" OpacityMask="Black">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border x:Name="queImgBorder" BorderThickness="1" BorderBrush="Black" Margin="10,0,10,5" Background="White">
+                    <Image x:Name="queImg" OpacityMask="White" Margin="1,1,1,1"/>
+                </Border>
+                <Rectangle Visibility="Hidden"/>
+                <Grid x:Name="twoQueDisp" Visibility="Hidden" Background="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Border x:Name="queImg1Border" BorderThickness="1" BorderBrush="Black" Margin="10,10,5,5" Background="White">
+                        <Image x:Name="queImg1"/>
+                    </Border>
+                    <Border x:Name="queImg2Border" BorderThickness="1" BorderBrush="Black" Margin="5,10,10,5" Background="White" Grid.Column="1">
+                        <Image x:Name="queImg2"/>
+                    </Border>
+                </Grid>
+            </Grid>
+            <Border x:Name="AnsImgBorder" BorderThickness="1" BorderBrush="Black" Margin="10,5,10,0" Background="White" Grid.Row="1">
+                <Image x:Name="ansImg" OpacityMask="White" Margin="1,1,1,1"/>
+            </Border>
+            <Rectangle Grid.Column="1" Visibility="Hidden"/>
+            <Grid x:Name="twoAnsDisp" Visibility="Hidden" Margin="10,10,10,10" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Border x:Name="ansImg1Border" BorderThickness="1" BorderBrush="Black" Margin="0,-5,5,0" Background="White">
+                    <Image x:Name="ansImg1"/>
+                </Border>
+                <Border x:Name="ansImg2Border" BorderThickness="1" BorderBrush="Black" Margin="5,-5,0,0" Background="White" Grid.Column="1">
+                    <Image x:Name="ansImg2"/>
+                </Border>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="homeBtn" Content="Home" Click="homeBtn_Click" FontSize="27" Background="White" Margin="10,10,10,10" Padding="0,0,0,0"/>
+            <Button x:Name="endQuizBtn" Content="End Quiz" Click="endQuizBtn_Click" FontSize="27" Grid.Column="5" Background="White" Margin="10,10,10,10" Padding="0,0,0,0"/>
+            <Button x:Name="skipBtn" Content="Skip" Grid.Column="4" FontSize="30" Click="skipBtn_Click" Background="White" Margin="10,10,10,10" Padding="0,-5,0,0"/>
+            <Label x:Name="resultLabel" Content="Result" Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="27" Margin="10,10,10,10" Padding="0,0,0,5"/>
+            <Button x:Name="toggleAnsBtn" Content="Toggle Answer" Grid.Column="1" FontSize="27" Click="toggleAnsBtn_Click" Background="White" Margin="10,10,10,10" Padding="0,0,0,0"/>
+            <Label x:Name="questionCountLabel" Content="Question Count" Grid.Column="3" Margin="10,10,10,10" FontSize="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,0"/>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="inputTxtBox" FontSize="27" TextWrapping="Wrap" TextChanged="inputTxtBox_TextChanged" Margin="10,10,10,10"/>
+            <Button x:Name="answerBtn" Content="Start" FontSize="27" Click="answerBtn_Click"  Grid.Column="1" Margin="10,10,10,10" Background="White"/>
+            <Rectangle Visibility="Hidden" Fill="#00000000"/>
+            <Grid x:Name="twoAnsInput" Visibility="Hidden" Background="#00000000">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="4*"/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="yLabel" Content="y =" Grid.Column="2" Margin="10,10,10,10" FontSize="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0,0,0,0" BorderBrush="Transparent"/>
+                <Label x:Name="xLabel" Content="x =" Margin="10,10,10,10" FontSize="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0,0,0,0" BorderBrush="Transparent"/>
+                <TextBox x:Name="ans1TxtBox" Grid.Column="1" Text="" TextWrapping="Wrap" FontSize="25" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="10,12,10,13" TextChanged="ans1TxtBox_TextChanged"/>
+                <TextBox x:Name="ans2TxtBox" Grid.Column="3" Text="" TextWrapping="Wrap" FontSize="25" Margin="10,12,10,13" VerticalContentAlignment="Center" TextChanged="ans2TxtBox_TextChanged"/>
+            </Grid>
+        </Grid>
+        <Border BorderThickness="1" BorderBrush="Transparent" Grid.Row="3"/>
+        <Grid x:Name="statsGrid" Grid.Row="3" Margin="10,0,10,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="statsGrid1" Grid.Column="1" Margin="5,0,0,0" Background="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="1.75*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border BorderThickness="1" BorderBrush="Black" Background="#00000000"/>
+                <Border BorderThickness="1" BorderBrush="Black" Grid.Column="1">
+                    <Label Content="Algebra" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#00000000"/>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="Black" Grid.Column="2">
+                    <Label Content="Calculus" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#00000000"/>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="Black" Grid.Column="3">
+                    <Label Content="Geometry" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="22" Background="#00000000"/>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="Black" Grid.Column="4">
+                    <Label Content="Simultaneous Equation" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="22" Background="#00000000"/>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="Black" Grid.Column="5">
+                    <Label Content="Trigonometry " HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="22" Background="#00000000"/>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="Black" Grid.Row="1">
+                    <Label Content="Correct" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="22" Background="#00000000"/>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="Black" Grid.Column="1" Grid.Row="1">
+                    <Label x:Name="algebraCorrectLabel" Content="N/A" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="22" Background="#00000000"/>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="Black" Grid.Column="2" Grid.Row="1">
+                    <Label x:Name="calculusCorrectLabel" Content="N/A" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="22" Background="#00000000"/>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="Black" Grid.Column="3" Grid.Row="1">
+                    <Label x:Name="geometryCorrectLabel" Content="N/A" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="22" Background="#00000000"/>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="Black" Grid.Column="4" Grid.Row="1">
+                    <Label x:Name="simEqCorrectLabel" Content="N/A" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="22" Background="#00000000"/>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="Black" Grid.Column="5" Grid.Row="1">
+                    <Label x:Name="trigCorrectLabel" Content="N/A" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="22" Background="#00000000"/>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="Black" Grid.Row="2">
+                    <Label Content="Incorrect" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="22" Background="#00000000"/>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="Black" Grid.Column="1" Grid.Row="2">
+                    <Label x:Name="algebraIncorrectLabel" Content="N/A" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="22" Background="#00000000"/>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="Black" Grid.Column="2" Grid.Row="2">
+                    <Label x:Name="calculusIncorrectLabel" Content="N/A" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="22" Background="#00000000"/>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="Black" Grid.Column="3" Grid.Row="2">
+                    <Label x:Name="geometryIncorrectLabel" Content="N/A" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="22" Background="#00000000"/>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="Black" Grid.Column="4" Grid.Row="2">
+                    <Label x:Name="simEqIncorrectLabel" Content="N/A" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="22" Background="#00000000"/>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="Black" Grid.Column="5" Grid.Row="2">
+                    <Label x:Name="trigIncorrectLabel" Content="N/A" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="22" Background="#00000000"/>
+                </Border>
+            </Grid>
+            <Border x:Name="clipboardBox" BorderThickness="1" BorderBrush="Black" Margin="0,0,5,0" Background="White"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="fractionBtn" Content="Fraction" Margin="10,10,5,10" FontSize="25" Background="White" Click="fractionBtn_Click" Padding="0,0,0,0"/>
+                    <Button x:Name="powerBtn" Content="Power" Margin="5,10,15,10" FontSize="25" Background="White" Click="powerBtn_Click" Padding="0,0,0,0" Grid.Column="1"/>
+                </Grid>
+                <Label Content="Notation Clipboard" Margin="10,10,10,10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,0" FontSize="24" BorderBrush="#00000000"/>
+            </Grid>
+        </Grid>
+        <Label x:Name="questionLabel" Margin="10,10,10,10" FontSize="36" BorderBrush="Black" BorderThickness="1,1,1,1" VerticalContentAlignment="Center" Background="White"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="-46,139,0,0" Grid.Row="3" VerticalAlignment="Top"/>
+    </Grid>
+</Page>

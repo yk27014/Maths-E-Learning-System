@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>E_Maths_Learning</id>
+    <version>1.0.0</version>
+    <authors>E_Maths_Learning</authors>
+    <owners>E_Maths_Learning</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework=".NETCoreApp3.1" />
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework=".NETCoreApp3.1">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WPF" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="C:\Users\james\source\repos\E_Maths_Learning\E_Maths_Learning\bin\Debug\netcoreapp3.1\E_Maths_Learning.runtimeconfig.json" target="lib\netcoreapp3.1\E_Maths_Learning.runtimeconfig.json" />
+    <file src="C:\Users\james\source\repos\E_Maths_Learning\E_Maths_Learning\bin\Debug\netcoreapp3.1\E_Maths_Learning.dll" target="lib\netcoreapp3.1\E_Maths_Learning.dll" />
+  </files>
+</package>
